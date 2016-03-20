@@ -15,23 +15,38 @@ namespace Craft;
 
 class MnEagerVariable
 {
-    public function first($stuff)
+    public function isEager($stuff)
     {
-        if (is_array($stuff))
-        {
-            return (count($stuff) ? $stuff[0] : null);
-        } else {
-            return $stuff->first();
-        }
+        return MnEagerHelper::isEager($stuff);
     }
 
     public function find($stuff)
     {
-        if (is_array($stuff))
-        {
-            return ($stuff);
-        } else {
-            return $stuff->find();
-        }
+        return MnEagerHelper::find($stuff);
+    }
+
+    public function first($stuff)
+    {
+        return MnEagerHelper::first($stuff);
+    }
+
+    public function last($stuff)
+    {
+        return MnEagerHelper::last($stuff);
+    }
+
+    public function nth($stuff, $n)
+    {
+        return MnEagerHelper::nth($stuff, $n);
+    }
+
+    public function ids($stuff)
+    {
+        return MnEagerHelper::ids($stuff);
+    }
+
+    public function total($stuff)
+    {
+        return MnEagerHelper::total($stuff);
     }
 }

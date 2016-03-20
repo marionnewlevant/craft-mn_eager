@@ -13,20 +13,80 @@ MN Eager works on Craft 2.4.x, Craft 2.5.x., and Craft 2.6.x
 
 ## MN Eager Overview
 
-Simplify fetching of fields in an environment where they may have been [Eager Loaded](https://craftcms.com/docs/templating/eager-loading-elements)
+The code to [fetch the elements](https://craftcms.com/docs/templating/elementcriteriamodel#fetching-the-elements) from a Craft [ElementCriteriaModel](https://craftcms.com/docs/templating/elementcriteriamodel) is different when the elements have been [eager-loaded](https://craftcms.com/docs/templating/eager-loading-elements).
+
+This plugin provides a uniform syntax for fetching elements wether or not they have been eager loaded.
 
 ## Using MN Eager
 
-`{% set image = craft.mnEager.first(entry.assetsField) %}` will set `image` to the first item in `entry.assetsField` (or `null`) whether or not `assetsField` has been [eager loaded](https://craftcms.com/docs/templating/eager-loading-elements).
+The MN Eager functions are available as craft variables and as twig extensions.
 
-`{% set images = craft.mnEager.find(entry.assetsField) %}` will set `images` to an array of items whether or not `assetsField` has been [eager loaded](https://craftcms.com/docs/templating/eager-loading-elements).
+### [find](https://craftcms.com/docs/templating/elementcriteriamodel#find)
 
-You may find this especially useful in writing twig [macros](http://twig.sensiolabs.org/doc/tags/macro.html) which are agnositic as to whether a field has been eager loaded.
+Use any of:
+
+- `craft.mneager.find(someField)`
+- `mnFind(someField)`
+- `someField | mnFind`
+
+### [first](https://craftcms.com/docs/templating/elementcriteriamodel#first)
+
+Use any of:
+
+- `craft.mneager.first(someField)`
+- `mnFirst(someField)`
+- `someField | mnFirst`
+
+### [last](https://craftcms.com/docs/templating/elementcriteriamodel#last)
+
+Use any of:
+
+- `craft.mneager.last(someField)`
+- `mnLast(someField)`
+- `someField | mnLast`
+
+### [nth](https://craftcms.com/docs/templating/elementcriteriamodel#nth)
+
+Use any of:
+
+- `craft.mneager.nth(someField, index)`
+- `mnNth(someField, index)`
+- `someField | mnNth(index)`
+
+### [ids](https://craftcms.com/docs/templating/elementcriteriamodel#ids)
+
+Use any of:
+
+- `craft.mneager.ids(someField)`
+- `mnIds(someField)`
+- `someField | mnIds`
+
+### [total](https://craftcms.com/docs/templating/elementcriteriamodel#total)
+
+Use any of:
+
+- `craft.mneager.total(someField)`
+- `mnTotal(someField)`
+- `someField | mnTotal`
+
+### isEager
+
+In addition to the fetching function, `isEager` will tell you whether an ElementCriteriaModel has been eager loaded:
+
+- `craft.mneager.isEager(someField)`
+- `isEager(someField)`
+- `someField | isEager`
 
 ## MN Eager Changelog
 
 ### 1.0.0 -- 2016.03.16
 
 * Initial release
+
+### 1.0.1 -- 2016.03.19
+
+* added `last`, `nth`, `ids`, `total` to round out the fetching functions.
+* added `isEager`
+* added twig filters and functions
 
 Brought to you by [Marion Newlevant](http://marion.newlevant.com)

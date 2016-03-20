@@ -113,4 +113,17 @@ class MnEagerPlugin extends BasePlugin
         return false;
     }
 
+    /**
+     * Add any Twig extensions.
+     *
+     * @return mixed
+     */
+    public function addTwigExtension()
+    {
+        Craft::import('plugins.mneager.twigextensions.MnEagerTwigExtension');
+
+        return new MnEagerTwigExtension();
+    }
+
+
 }
