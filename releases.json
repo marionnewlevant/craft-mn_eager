@@ -13,7 +13,7 @@
         "date": "2016-03-19T23:45:43.282Z",
         "notes": [
             "[Added] Supports the complete set of ElementCriteriaModel Fetch operations: find, first, last, nth, ids, total",
-            "[Added] IsEager test checks whether ElementCriteriaModel has been eager-loaded"
+            "[Added] IsEager test checks whether ElementCriteriaModel has been eager-loaded",
             "[Added] Twig filters and functions as well as the craft variable. The twig filters are named mnFind, mnFirst etc. so as not to conflict with native twig filters"
         ]
     }

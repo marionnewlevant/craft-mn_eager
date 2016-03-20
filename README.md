@@ -15,7 +15,7 @@ MN Eager works on Craft 2.4.x, Craft 2.5.x., and Craft 2.6.x
 
 The code to [fetch the elements](https://craftcms.com/docs/templating/elementcriteriamodel#fetching-the-elements) from a Craft [ElementCriteriaModel](https://craftcms.com/docs/templating/elementcriteriamodel) is different when the elements have been [eager-loaded](https://craftcms.com/docs/templating/eager-loading-elements).
 
-This plugin provides a uniform syntax for fetching elements wether or not they have been eager loaded.
+This plugin provides a uniform syntax for fetching elements whether or not they have been eager loaded.
 
 ## Using MN Eager
 
