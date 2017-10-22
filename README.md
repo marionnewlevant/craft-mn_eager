@@ -2,6 +2,8 @@
 
 access data that may or may not have been eager-loaded
 
+## This is the Craft 2 verion. The Craft 3 version is craft-agnostic_fetch
+
 ## Installation
 
 To install MN Eager, follow these steps:
